@@ -1,1 +1,8 @@
-<p>login works!</p>
+<h1>{{ titulo }}</h1>
+<input [value]="email">
+<input [value]="senha">
+
+<input #campo type="text">
+<button (click)="salvar(campo.value)">
+  Salvar
+</button>

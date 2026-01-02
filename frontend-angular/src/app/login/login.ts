@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class Login {
 
+  titulo = 'Fazer Login';
+  email = '';
+  senha = '';
+  Entrar = 'Entrar';
+
+  salvar(campo: string) {
+    window.alert('receba papai');
+    return console.log(campo);
+  };
+
 }
