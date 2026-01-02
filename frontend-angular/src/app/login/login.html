@@ -1,8 +1,12 @@
-<h1>{{ titulo }}</h1>
-<input [value]="email">
-<input [value]="senha">
+<div class="container">
+  <div class="login-card">
+    <h1>{{ titulo }}</h1>
 
-<input #campo type="text">
-<button (click)="salvar(campo.value)">
-  Salvar
-</button>
+    <input #email type="text" placeholder="Email" class="input-text">
+    <input #senha type="password" placeholder="Senha" class="input-text">
+
+    <button class="button-login" (click)="logar(email.value, senha.value)">
+      Entrar
+    </button>
+  </div>
+</div>

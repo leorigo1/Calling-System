@@ -18,6 +18,5 @@ public class UserController {
     public String test() {
         return "User endpoint funcionando";
     }
-	
-	
+    
 }
