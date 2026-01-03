@@ -17,6 +17,7 @@ public class UserEntity {
 	private String email;
 	private String password;
 	
+	public UserEntity () {}
 	
 	public UserEntity(Long id, String name, String email, String password) {
 		this.id = id;
