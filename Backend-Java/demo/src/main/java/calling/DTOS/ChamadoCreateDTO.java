@@ -1,22 +1,27 @@
 package calling.DTOS;
 
+import calling.enums.CallingPriority;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+
 public class ChamadoCreateDTO {
 
     private String titulo;
     private String descricao;
     private String categoria;
-    private Integer prioridade;
+    private CallingPriority callingPriority;
     private Long usuarioId;
-    
-    public ChamadoCreateDTO () {}
-    
-	public ChamadoCreateDTO(String titulo, String descricao, String categoria, Integer prioridade, Long usuarioId) {
-		this.titulo = titulo;
-		this.descricao = descricao;
-		this.categoria = categoria;
-		this.prioridade = prioridade;
-		this.usuarioId = usuarioId;
-	}
+
+    public ChamadoCreateDTO() {}
+
+    public ChamadoCreateDTO(String titulo, String descricao, String categoria,
+                            CallingPriority callingPriority, Long usuarioId) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.callingPriority = callingPriority;
+        this.usuarioId = usuarioId;
+    }
 
 	public String getTitulo() {
 		return titulo;
@@ -42,12 +47,12 @@ public class ChamadoCreateDTO {
 		this.categoria = categoria;
 	}
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public CallingPriority getCallingPriority() {
+		return callingPriority;
 	}
 
-	public void setPrioridade(Integer prioridade) {
-		this.prioridade = prioridade;
+	public void setCallingPriority(CallingPriority callingPriority) {
+		this.callingPriority = callingPriority;
 	}
 
 	public Long getUsuarioId() {
@@ -58,3 +63,4 @@ public class ChamadoCreateDTO {
 		this.usuarioId = usuarioId;
 	}
 }
+

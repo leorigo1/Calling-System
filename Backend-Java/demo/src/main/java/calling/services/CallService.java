@@ -1,5 +1,7 @@
 package calling.services;
 
+import java.time.Instant;
+
 import org.springframework.stereotype.Service;
 
 import calling.DTOS.ChamadoCreateDTO;
@@ -10,22 +12,30 @@ import calling.repositories.UserRepository;
 
 @Service
 public class CallService {
-	
-	private UserRepository userRepository;
-    private CallRepository callRepository;
-	
-	public CallEntity criar(ChamadoCreateDTO dto) {
 
-	    UserEntity usuario = userRepository.findById(dto.getUsuarioId())
-	        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    private final UserRepository userRepository;
+    private final CallRepository callRepository;
 
-	    CallEntity chamado = new CallEntity();
-	    chamado.setTitulo(dto.getTitulo());
-	    chamado.setDescricao(dto.getDescricao());
-	    chamado.setCategoria(dto.getCategoria());
-	    chamado.setPrioridade(dto.getPrioridade());
-	    chamado.setUsuario(usuario);
+    public CallService(UserRepository userRepository,
+                       CallRepository callRepository) {
+        this.userRepository = userRepository;
+        this.callRepository = callRepository;
+    }
 
-	    return callRepository.save(chamado);
-	}
+    public CallEntity criar(ChamadoCreateDTO dto) {
+
+        UserEntity usuario = userRepository.findById(dto.getUsuarioId())
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        CallEntity chamado = new CallEntity();
+        chamado.setTitulo(dto.getTitulo());
+        chamado.setDescricao(dto.getDescricao());
+        chamado.setCategoria(dto.getCategoria());
+        chamado.setCallingPriority(dto.getCallingPriority());
+        chamado.setUsuario(usuario);
+        chamado.setDataCriacao(Instant.now());
+
+        return callRepository.save(chamado);
+    }
 }
+

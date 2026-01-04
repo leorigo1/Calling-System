@@ -10,17 +10,21 @@ public class UserService {
 
 	private UserRepository userRepository;
 	
-	public void createUser (UserEntity userEntity) {
-		userRepository.save(userEntity);
-	}
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 	
-	public void findUserById (UserEntity userEntity) {
-		userRepository.findById(userEntity.getId());
+	
+	public UserEntity createUser (UserEntity userEntity) {
+		return userRepository.save(userEntity);
 	}
+
+    public UserEntity findUserById(Long id) {
+        return userRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    }
 	
 	public void deleteUser (UserEntity userEntity) {
 		userRepository.delete(userEntity);
 	}
-	
-	
 }

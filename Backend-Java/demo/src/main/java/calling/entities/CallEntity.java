@@ -2,7 +2,10 @@ package calling.entities;
 
 import java.time.Instant;
 
+import calling.enums.CallingPriority;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,7 +24,10 @@ public class CallEntity {
 	private String titulo;
 	private String descricao;
 	private String categoria;
-	private Integer prioridade;
+	
+	@Enumerated(EnumType.ORDINAL)
+	private CallingPriority callingPriority;
+	
 	private Instant dataCriacao;
 	
     @ManyToOne
@@ -31,12 +37,12 @@ public class CallEntity {
 	
 	public CallEntity () {}
 	
-	public CallEntity(Long id, String titulo, String descricao, String categoria, Integer prioridade, Instant dataCriacao, UserEntity usuario) {
+	public CallEntity(Long id, String titulo, String descricao, String categoria, CallingPriority callingPriority, Instant dataCriacao, UserEntity usuario) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.categoria = categoria;
-		this.prioridade = prioridade;
+		this.callingPriority = callingPriority;
 		this.dataCriacao = dataCriacao;
 		this.usuario = usuario;
 	}
@@ -72,15 +78,15 @@ public class CallEntity {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-
-	public Integer getPrioridade() {
-		return prioridade;
-	}
-
-	public void setPrioridade(Integer prioridade) {
-		this.prioridade = prioridade;
-	}
 	
+	public CallingPriority getCallingPriority() {
+		return callingPriority;
+	}
+
+	public void setCallingPriority(CallingPriority callingPriority) {
+		this.callingPriority = callingPriority;
+	}
+
 	public Instant getDataCriacao() {
 		return dataCriacao;
 	}
@@ -96,5 +102,4 @@ public class CallEntity {
 	public void setUsuario(UserEntity usuario) {
 		this.usuario = usuario;
 	}
-	
 }
