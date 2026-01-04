@@ -1,6 +1,8 @@
 package calling.services;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import org.springframework.stereotype.Service;
 
@@ -33,7 +35,11 @@ public class CallService {
         chamado.setCategoria(dto.getCategoria());
         chamado.setCallingPriority(dto.getCallingPriority());
         chamado.setUsuario(usuario);
-        chamado.setDataCriacao(Instant.now());
+        
+        Instant ZonaBrasil = ZonedDateTime
+				.now(ZoneId.of("America/Sao_Paulo"))
+				.toInstant();
+        chamado.setDataCriacao(ZonaBrasil);
 
         return callRepository.save(chamado);
     }
