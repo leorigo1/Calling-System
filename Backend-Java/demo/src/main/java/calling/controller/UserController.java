@@ -9,7 +9,7 @@ import calling.entities.UserEntity;
 import calling.services.UserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/create-user")
 public class UserController {
 
     private final UserService userService;
