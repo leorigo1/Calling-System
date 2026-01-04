@@ -63,4 +63,3 @@ public class ChamadoCreateDTO {
 		this.usuarioId = usuarioId;
 	}
 }
-

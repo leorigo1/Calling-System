@@ -1,10 +1,15 @@
 <h1>Iniciar chamado</h1>
 
-<input #titulo type="text" placeholder="Titulo">
-<input #descricao type="text" placeholder="Descrição">
-<input #categoria type="text" placeholder="Categoria">
-<input #prioridade type="text" placeholder="Prioridade">
+<input type="text" [(ngModel)]="titulo" placeholder="Título">
 
-    <button class="button-call" (click)="criar()">
-      Iniciar chamado
-    </button>
+<textarea [(ngModel)]="descricao" placeholder="Descrição"></textarea>
+
+<textarea [(ngModel)]="categoria" placeholder="Categoria"></textarea>
+
+<select [(ngModel)]="callingPriority">
+  <option [value]="1">Baixa</option>
+  <option [value]="2">Média</option>
+  <option [value]="3">Alta</option>
+</select>
+
+<button (click)="salvarChamado()">Abrir Chamado</button>

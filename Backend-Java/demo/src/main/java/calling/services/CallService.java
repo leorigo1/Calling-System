@@ -26,15 +26,11 @@ public class CallService {
 
     public CallEntity criar(ChamadoCreateDTO dto) {
 
-        UserEntity usuario = userRepository.findById(dto.getUsuarioId())
-            .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-
         CallEntity chamado = new CallEntity();
         chamado.setTitulo(dto.getTitulo());
         chamado.setDescricao(dto.getDescricao());
         chamado.setCategoria(dto.getCategoria());
         chamado.setCallingPriority(dto.getCallingPriority());
-        chamado.setUsuario(usuario);
         
         Instant ZonaBrasil = ZonedDateTime
 				.now(ZoneId.of("America/Sao_Paulo"))
@@ -44,4 +40,3 @@ public class CallService {
         return callRepository.save(chamado);
     }
 }
-

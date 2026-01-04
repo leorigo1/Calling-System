@@ -2,6 +2,7 @@ package calling.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import calling.DTOS.ChamadoCreateDTO;
 import calling.entities.CallEntity;
 import calling.services.CallService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import org.springframework.web.bind.annotation;
 
 @RestController
 @RequestMapping("/call")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CallController {
 
     private final CallService callService;
