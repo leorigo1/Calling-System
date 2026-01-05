@@ -1,5 +1,8 @@
 package calling.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +12,7 @@ import calling.entities.UserEntity;
 import calling.services.UserService;
 
 @RestController
-@RequestMapping("/create-user")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -18,8 +21,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/create-user")
     public UserEntity criar(@RequestBody UserEntity user) {
         return userService.createUser(user);
     }
+    
+    @GetMapping("/list-all")
+    public List<UserEntity> listarTodosUsuarios () {
+    	return userService.listarTodosUsuarios();
+    }
+    
 }

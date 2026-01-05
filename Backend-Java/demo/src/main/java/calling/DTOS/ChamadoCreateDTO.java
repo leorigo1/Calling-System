@@ -1,8 +1,6 @@
 package calling.DTOS;
 
 import calling.enums.CallingPriority;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 public class ChamadoCreateDTO {
 

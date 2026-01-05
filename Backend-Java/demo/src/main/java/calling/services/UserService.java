@@ -1,5 +1,7 @@
 package calling.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import calling.entities.UserEntity;
@@ -27,4 +29,9 @@ public class UserService {
 	public void deleteUser (UserEntity userEntity) {
 		userRepository.delete(userEntity);
 	}
+	
+	public List<UserEntity> listarTodosUsuarios () {
+		return userRepository.findAll();
+	}
+	
 }

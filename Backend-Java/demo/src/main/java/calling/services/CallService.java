@@ -3,12 +3,12 @@ package calling.services;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import calling.DTOS.ChamadoCreateDTO;
 import calling.entities.CallEntity;
-import calling.entities.UserEntity;
 import calling.repositories.CallRepository;
 import calling.repositories.UserRepository;
 
@@ -38,5 +38,9 @@ public class CallService {
         chamado.setDataCriacao(ZonaBrasil);
 
         return callRepository.save(chamado);
+    }
+    
+    public List<CallEntity> listarTodosChamados () {
+    	return callRepository.findAll();
     }
 }
