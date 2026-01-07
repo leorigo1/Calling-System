@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-weight: 900;
+}
+
+.button-send {
+  margin-top: 10px;
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  border-radius: 999px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 200px;
+}
+
+.categoria, .prioridade, .usuario, .contato {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    color: #38bdf8;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.desc-area {
+  width: 50%;
+  height: 100px;
+  resize: none;
+  border-radius: 5px;
+}
+
+/* remove a borda azul ao clicar */
+.desc-area:focus, .assunto-text:focus, .contato-text:focus {
+  outline: none;
+  border: 2px solid #00bcd4;
+}
+
+.assunto-text {
+    width: 50%;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.select-area {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.contato {
+    gap: 2px;
+    .contato-text {
+        border-radius: 6px;
+        width: 150%;
+        height: 20px;
+    }
+}

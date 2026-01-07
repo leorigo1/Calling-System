@@ -1,15 +1,51 @@
+<body>
 <h1>Iniciar chamado</h1>
 
-<input type="text" [(ngModel)]="titulo" placeholder="Título">
+<div class="select-area">
 
-<textarea [(ngModel)]="descricao" placeholder="Descrição"></textarea>
+<div class="usuario">
+<label for="usuario">Usuario</label>
+<select [(ngModel)]="usuario">
+  <option [value]="1">Leonardo Rigo</option>
+  <option [value]="2">Felipe Neto</option>
+  <option [value]="3">Nando Moura</option>
+</select>
+</div>
 
-<textarea [(ngModel)]="categoria" placeholder="Categoria"></textarea>
+<div class="categoria">
+<label for="categoria">Categoria</label>
+<select [(ngModel)]="categoria">
+  <option [value]="1">Pacote Office</option>
+  <option [value]="2">Windows</option>
+  <option [value]="3">Equipamento</option>
+  <option [value]="4">Internet</option>
+  <option [value]="5">Impressora</option>
+</select>
+</div>
 
+<div class="prioridade">
+  <label for="callingPriority">Prioridade</label>
 <select [(ngModel)]="callingPriority">
   <option [value]="1">Baixa</option>
   <option [value]="2">Média</option>
   <option [value]="3">Alta</option>
 </select>
+</div>
 
-<button (click)="salvarChamado()">Abrir Chamado</button>
+<div class="contato">
+  <label for="formadeContato">Forma de contato</label>
+<select>
+  <option>WhatsApp</option>
+  <option>Teams</option>
+  <option>Celular</option>
+  <option>Email</option>
+</select>
+  <input type="text" [(ngModel)]="formadeContato" placeholder="Contato" class="contato-text">
+</div>
+
+</div>
+
+<input type="text" [(ngModel)]="titulo" placeholder="Assunto" class="assunto-text">
+<textarea [(ngModel)]="descricao" placeholder="Descrição da solitação" class="desc-area"></textarea>
+<button (click)="salvarChamado()" class="button-send">Abrir Chamado</button>
+</body>

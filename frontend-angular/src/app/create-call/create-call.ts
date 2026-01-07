@@ -11,19 +11,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class CreateCall {
 
+  usuario = '';
   titulo = '';
   descricao = '';
   callingPriority = 1;
   categoria = '';
+  formadeContato = '';
 
   constructor(private chamadoService: ChamadoService) {}
 
   salvarChamado() {
     const body = {
+      usuario: this.usuario,
       titulo: this.titulo,
       descricao: this.descricao,
       callingPriority: this.callingPriority,
-      categoria: this.categoria
+      categoria: this.categoria,
+      formadeContato: this.formadeContato
     };
 
     this.chamadoService.criarChamado(body).subscribe({
