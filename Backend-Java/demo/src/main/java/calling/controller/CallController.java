@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import calling.DTOS.ChamadoCreateDTO;
+import calling.DTOS.ChamadoResponseDTO;
 import calling.entities.CallEntity;
 import calling.services.CallService;
 
@@ -26,15 +27,15 @@ public class CallController {
     }
 
     @PostMapping("/create-call")
-    public ResponseEntity<CallEntity> criarChamado(
+    public ResponseEntity<ChamadoResponseDTO> criarChamado(
             @org.springframework.web.bind.annotation.RequestBody ChamadoCreateDTO dto) {
 
-        CallEntity chamado = callService.criar(dto);
+        ChamadoResponseDTO chamado = callService.criar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(chamado);
     }
     
     @GetMapping("/list-all")
-    public ResponseEntity<List<CallEntity>> listarTodosChamados () {
-    	return ResponseEntity.ok().body(callService.listarTodosChamados());
+    public List<CallEntity> listarTodosChamados () {
+    	return callService.listarTodosChamados();
     }
 }

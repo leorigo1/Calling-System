@@ -1,5 +1,6 @@
 package calling.DTOS;
 
+import calling.entities.UserEntity;
 import calling.enums.CallingPriority;
 
 public class ChamadoCreateDTO {
