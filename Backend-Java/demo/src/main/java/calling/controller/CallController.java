@@ -35,7 +35,20 @@ public class CallController {
     }
     
     @GetMapping("/list-all")
-    public List<CallEntity> listarTodosChamados () {
-    	return callService.listarTodosChamados();
+    public List<ChamadoResponseDTO> listarChamados () {
+    	return callService.listarTodosChamados()
+    		.stream()
+    		.map(entity -> {
+    			ChamadoResponseDTO dto =  new ChamadoResponseDTO();
+    			dto.setId(entity.getId());
+                dto.setTitulo(entity.getTitulo());
+                dto.setDescricao(entity.getDescricao());
+                dto.setCategoria(entity.getCategoria());
+                dto.setCallingPriority(entity.getCallingPriority());
+                dto.setDataCriacao(entity.getDataCriacao());
+                dto.setUsuarioId(entity.getId());
+                dto.setNomeUsuario(entity.getUsuario().getName());
+                	return dto;
+    		}).toList();
     }
 }

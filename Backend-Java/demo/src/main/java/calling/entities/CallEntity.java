@@ -102,4 +102,9 @@ public class CallEntity {
 	public void setUsuario(UserEntity usuario) {
 		this.usuario = usuario;
 	}
+
+	@Override
+	public String toString() {
+	    return usuario.getName();
+	}	
 }

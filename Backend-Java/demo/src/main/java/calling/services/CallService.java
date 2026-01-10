@@ -1,5 +1,7 @@
 package calling.services;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -14,6 +16,7 @@ import calling.repositories.UserRepository;
 
 @Service
 public class CallService {
+	
 
     private final UserRepository userRepository;
     private final CallRepository callRepository;
@@ -31,9 +34,7 @@ public class CallService {
         chamado.setDescricao(dto.getDescricao());
         chamado.setCategoria(dto.getCategoria());
         chamado.setCallingPriority(dto.getCallingPriority());
-        chamado.setDataCriacao(
-            ZonedDateTime.now(ZoneId.of("America/Sao_Paulo")).toInstant()
-        );
+        chamado.setDataCriacao(Instant.now());
 
         chamado.setUsuario(
             userRepository.findById(dto.getUsuarioId())
@@ -60,9 +61,7 @@ public class CallService {
         return response;
     }
 
-    
-
     public List<CallEntity> listarTodosChamados() {
-        return callRepository.findAll();
+    	return callRepository.findAll();
     }
 }
