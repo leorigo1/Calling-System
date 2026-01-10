@@ -1,4 +1,4 @@
-<div *ngFor="let chamado of chamados">
+<div *ngFor="let chamado of chamados$ | async">
 <p> {{ chamado.id }}</p>
 <p> {{ chamado.titulo }}</p>
 <p>{{ chamado.descricao }}</p>
