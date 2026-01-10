@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { Login } from './login/login';
 import { CreateCall } from './create-call/create-call'
+import { ListCalls } from './list-calls/list-calls';
 
 export const routes: Routes = [
     { path: 'login', component: Login },
     { path: 'iniciar-chamado', component: CreateCall },
+    {path: 'list-calls', component: ListCalls},
 ];
