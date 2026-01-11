@@ -4,12 +4,12 @@
 <div class="select-area">
 
 <div class="usuario">
-<label for="usuario">Usuario</label>
-<select [(ngModel)]="usuario">
-  <option [value]="1">Leonardo Rigo</option>
-  <option [value]="2">Felipe Neto</option>
-  <option [value]="3">Nando Moura</option>
-</select>
+  <label for="usuarioId">Usuario</label>
+  <select [(ngModel)]="usuarioSelecionadoId" name="usuarioId">
+    <option *ngFor="let u of usuarios" [value]="u.id">
+      {{ u.name }}
+    </option>
+  </select>
 </div>
 
 <div class="categoria">

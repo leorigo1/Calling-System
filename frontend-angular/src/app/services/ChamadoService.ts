@@ -13,7 +13,7 @@ export class ChamadoService {
 
     criarChamado(chamado: any): Observable<any> {
     return this.http.post(
-        this.apiUrl + 'call/create-call',
+        this.apiUrl + '/call/create-call',
         chamado
     );
     }
