@@ -6,5 +6,5 @@ import { ListCalls } from './list-calls/list-calls';
 export const routes: Routes = [
     { path: 'login', component: Login },
     { path: 'iniciar-chamado', component: CreateCall },
-    {path: 'listar-chamdos', component: ListCalls},
+    {path: 'listar-chamados', component: ListCalls},
 ];

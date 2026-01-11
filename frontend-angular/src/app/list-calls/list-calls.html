@@ -1,9 +1,21 @@
-<div *ngFor="let chamado of chamados$ | async">
-<p> {{ chamado.id }}</p>
-<p> {{ chamado.titulo }}</p>
-<p>{{ chamado.descricao }}</p>
-<p>{{ chamado.categoria }} </p>  
-<p>{{ chamado.callingPriority }}</p>
-<p>{{ chamado.dataCriacao }}</p>
-<p>{{ chamado.nomeUsuario }}</p>
+<body>
+
+<h1>Listar Chamados</h1>
+
+<div class="chamado-card" *ngFor="let chamado of chamados$ | async">
+  <p class="id">#{{ chamado.id }}</p>
+  <p class="titulo">{{ chamado.titulo }}</p>
+  <p class="descricao">{{ chamado.descricao }}</p>
+
+  <div class="info">
+    <span class="categoria">{{ chamado.categoria }}</span>
+    <span class="prioridade">{{ chamado.callingPriority }}</span>
+  </div>
+
+  <div class="rodape">
+    <span class="data">{{ chamado.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</span>
+    <span class="usuario">{{ chamado.nomeUsuario }}</span>
+  </div>
 </div>
+
+</body>
