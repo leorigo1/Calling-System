@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-list-calls',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DatePipe],
   templateUrl: './list-calls.html',
   styleUrl: './list-calls.scss',
 })
