@@ -54,6 +54,8 @@
   line-height: 1.1;
 }
 
+
+
 .actions {
   margin-top: 32px;
   display: flex;
@@ -106,4 +108,51 @@
   .card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.support-sec{
+  background: #fafafa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px 0px 50px;
+
+  .text-div{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px 0px;
+  }
+
+.title h4 {
+  margin-bottom: 8px;
+  border: solid 1px;
+  padding: 5px 5px 5px;
+  border-radius: 15px;
+  width: 15%;
+}
+
+.title h2 {
+  margin-top: 0;
+  max-width: 420px;   /* controla onde quebra */
+  line-height: 1.0;   /* altura entre linhas */
+  font-size: 2.5rem;
+}
+
+  p{
+    max-width: 420px;   /* controla onde quebra */
+    line-height: 1.2;   /* altura entre linhas */
+  }
+
+  a{
+    color: #22c55e;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
+
+.img-support {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
