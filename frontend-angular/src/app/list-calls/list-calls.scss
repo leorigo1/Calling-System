@@ -1,11 +1,12 @@
 h1 {
-    color: white;
+    color: black;
 }
 
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #fff;
 }
 
 .chamado-card {

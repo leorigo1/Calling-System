@@ -9,12 +9,6 @@
   border-bottom: 1px solid #eee;
 }
 
-.header nav a {
-    color: #111;              /* cor do texto */
-  text-decoration: none;   /* remove o risco */
-  font-weight: 500;
-}
-
 .header nav a:hover {
   color: #22c55e;           /* cor ao passar o mouse (opcional) */
 }
@@ -37,7 +31,9 @@
   align-items: center;
 
   a{
-
+    color: #111;              /* cor do texto */
+    text-decoration: none;   /* remove o risco */
+    font-weight: 500;
   }
 }
 
