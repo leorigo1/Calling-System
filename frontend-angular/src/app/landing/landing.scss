@@ -1,0 +1,113 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.header nav a {
+    color: #111;              /* cor do texto */
+  text-decoration: none;   /* remove o risco */
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  color: #22c55e;           /* cor ao passar o mouse (opcional) */
+}
+
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+.header nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  a{
+
+  }
+}
+
+.hero {
+  padding: 96px 0;
+  background: #fafafa;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: #22c55e;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cards {
+  padding: 96px 0;
+}
+
+.card-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.footer {
+  padding: 32px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,10 +4,15 @@ body {
     gap: 7px;
     align-items: center;
     justify-content: center;
+    background: #fff;
+
+    /* remove a barra de rolagem  */
+      overflow: hidden;
+      overflow-y: hidden;
 }
 
 h1 {
-    color: white;
+    color: black;
     font-weight: 900;
 }
 
