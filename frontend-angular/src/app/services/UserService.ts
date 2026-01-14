@@ -16,4 +16,9 @@ export class UserService {
         `${this.apiUrl}/user/list-all`
         );
     }
+
+    registerUser(data: { name: string; email: string; password: string }): Observable<any> {
+        return this.http.post(this.apiUrl,data);
+    }
+
 }

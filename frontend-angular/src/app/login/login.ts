@@ -22,8 +22,4 @@ export class Login {
   this.router.navigate(["/register"])
  }
 
- return() {
-  this.router.navigate(["/"])
- }
-
 }
