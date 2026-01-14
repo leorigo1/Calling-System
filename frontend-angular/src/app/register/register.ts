@@ -12,7 +12,6 @@ import { UserService } from '../services/UserService';
 })
 export class Register {
 
-  titulo = 'Registre-se';
   name = '';
   email = '';
   password = '';

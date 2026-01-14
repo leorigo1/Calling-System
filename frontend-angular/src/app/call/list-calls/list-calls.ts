@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChamadoService } from '../services/ChamadoService';
+import { ChamadoService } from '../../services/ChamadoService';
 import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
 

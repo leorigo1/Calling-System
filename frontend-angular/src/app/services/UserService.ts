@@ -18,7 +18,11 @@ export class UserService {
     }
 
     registerUser(data: { name: string; email: string; password: string }): Observable<any> {
-        return this.http.post(this.apiUrl,data);
+        return this.http.post(this.apiUrl + '/auth/register', data);
+    }
+
+    login(data: {email: string, password: string}): Observable<any> {
+        return this.http.post(this.apiUrl + '/auth/login', data)
     }
 
 }
