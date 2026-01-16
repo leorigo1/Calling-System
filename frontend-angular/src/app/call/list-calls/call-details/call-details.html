@@ -1,1 +1,44 @@
-<p>call-details works!</p>
+<body>
+
+<h1>Chamado CH-3130</h1>
+
+<div class="chamado-card">
+  <p class="id">1</p>
+  <p class="titulo">Problema no radiador</p>
+  <p class="descricao">Radiador está sem líquido</p>
+
+  <div class="info">
+    <span class="categoria">Pacote Office</span>
+    <span class="prioridade">ALTA</span>
+  </div>
+
+  <div class="rodape">
+    <span class="data"> {{data}} </span>          <!-- date: 'dd/MM/yyyy' -->
+    <span class="usuario">Leonardo Rigo</span>
+  </div>
+
+  <div class="desc-area">
+<textarea
+  [(ngModel)]="novaMensagem"
+  placeholder="Digite o ocorrido..."
+></textarea>
+    <div class="btn-area">
+    <button (click)="atualizar()">Atualizar chamado</button>
+    <button (click)="finalizar()">Finalizar chamado</button>
+    <button class="sair" (click)="sair()">Sair</button>
+    </div>
+
+    <div class="select-camp">
+    <label for="select-tecn">Responsável</label>
+    <select name="select-tecn" id="select-tecn" [(ngModel)]="responsavel">
+        <option value="Leonardo Rigo">Leonardo Rigo</option>
+        <option value="Gabriel Penhasco">Gabriel Penhasco</option>
+        <option value="Felipe Montano">Felipe Montano</option>
+        <option value="Onça rosa">Onça rosa</option>
+    </select>
+    </div>
+  </div>
+
+</div>
+
+</body>
