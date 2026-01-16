@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChamadoService } from '../../services/ChamadoService';
 import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-calls',
@@ -15,7 +16,13 @@ export class ListCalls {
 
 chamados$: Observable<any[]>;
 
-  constructor(private service: ChamadoService) {
+
+  constructor(private service: ChamadoService, private router: Router) {
     this.chamados$ = this.service.listar();
   }
+
+detalhar() {
+  this.router.navigate(['/listar-chamados/chamado'])
+}
+
 }

@@ -23,11 +23,27 @@ constructor (private router: Router) {}
   }
 
   atualizar() {
+    if (!this.novaMensagem.trim()) {
+      alert('Digite alguma coisa')
+      return;
+    }
+    if(!this.responsavel.trim()){
+      alert('Digite alguma coisa')
+      return;
+    }
+
     console.log(this.novaMensagem)
   }
 
   finalizar() {
+    if (!this.novaMensagem.trim()) {
+      alert('Digite alguma coisa')
+      return;
+    }
+    if(!this.responsavel.trim()){
+      alert('Digite alguma coisa')
+      return;
+    }
     console.log('chamado finalizado', this.responsavel)
   }
-
 }
