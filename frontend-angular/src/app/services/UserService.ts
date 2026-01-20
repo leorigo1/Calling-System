@@ -25,8 +25,12 @@ export class UserService {
         return this.http.post(this.apiUrl + '/auth/login', data)
     }
 
-    verifyEmail(email: string): Observable<any> {
-        return this.http.get(this.apiUrl + '/user/get-user')
+    losePassword(email: string): Observable<any> {
+        return this.http.post(this.apiUrl + '/auth/esqueci-senha', email)
+    }
+
+    changePassword(password: string): Observable<any> {
+        return this.http.post(this.apiUrl + '/auth/redefinir-senha', password)
     }
 
 }

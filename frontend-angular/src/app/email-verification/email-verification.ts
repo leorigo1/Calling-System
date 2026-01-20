@@ -18,8 +18,7 @@ export class EmailVerification {
 
   validar(email: string) {
     console.log("Email: ", email);
-
-    this.router.navigate(['/password-reset'])
+    
   }
 
 }
