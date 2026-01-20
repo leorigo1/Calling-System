@@ -38,5 +38,10 @@ export class Login {
   register() {
     this.router.navigate(["/register"])
   }
+
+  passwordReset() {
+    this.router.navigate(['/email-verification'])
+  }
+
   };
 

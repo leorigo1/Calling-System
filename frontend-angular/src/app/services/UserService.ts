@@ -25,4 +25,8 @@ export class UserService {
         return this.http.post(this.apiUrl + '/auth/login', data)
     }
 
+    verifyEmail(email: string): Observable<any> {
+        return this.http.get(this.apiUrl + '/user/get-user')
+    }
+
 }
