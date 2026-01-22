@@ -99,12 +99,17 @@ textarea:focus {
   justify-content: center;
   gap: 15px;
 
-  button{
+  .btn{
   background-color: transparent;
   border: 1px solid #ddd;
   padding: 14px 28px;
   border-radius: 12px;
   cursor: pointer;
+
+    &:hover {
+      background-color: #1976d2;
+    }
+
   }
 }
 

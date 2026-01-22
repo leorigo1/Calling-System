@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderService } from '../services/LoaderService';
 
 @Component({
   selector: 'app-landing',
@@ -9,10 +10,16 @@ import { Router } from '@angular/router';
 })
 export class Landing {
 
-constructor (private router: Router){ }
+constructor (private router: Router, private loader: LoaderService,){ }
 
   login() {
-    this.router.navigate(['/login'])
+    this.loader.show();
+
+    setTimeout(() => {
+      this.router.navigate(['/login']).then(() => {
+        this.loader.hide();
+      });
+    }, 1000);
   }
 
   contact(){

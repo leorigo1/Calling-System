@@ -1,3 +1,7 @@
+*{
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -63,7 +67,7 @@
 }
 
 .btn-primary {
-  background: #22c55e;
+  background: #2a5dca;
   border: none;
   padding: 14px 28px;
   border-radius: 12px;
@@ -92,8 +96,9 @@
 }
 
 .card {
-  background: #fff;
+  background: #fafafa;
   padding: 32px;
+  border: solid 1px #ddd;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
@@ -115,7 +120,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 50px 0px 50px;
+  padding: 130px 0px 130px;
 
   .text-div{
     display: flex;
@@ -136,6 +141,7 @@
   max-width: 420px;   /* controla onde quebra */
   line-height: 1.0;   /* altura entre linhas */
   font-size: 2.5rem;
+  overflow-y: hidden;
 }
 
   p{
@@ -155,4 +161,27 @@
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+
+.demonstrate {
+  background-image: url("https://images.ctfassets.net/xny2w179f4ki/4nZnKpy3pernUhhkXBX7bj/9bcc356c7385433d20548f4a001e53ca/banner_CTA_-_flowers_-_roses__1_.png?&q=90");
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 30px;
+}
+
+.demonstrate h1 {
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.2;
 }

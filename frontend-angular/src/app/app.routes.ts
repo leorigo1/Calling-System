@@ -7,6 +7,7 @@ import { Register } from './register/register';
 import { CallDetails } from './call/list-calls/call-details/call-details';
 import { EmailVerification } from './email-verification/email-verification';
 import { PasswordReset } from './password-reset/password-reset';
+import { Loader } from './loader/loader';
  
 export const routes: Routes = [
     { path: 'login', component: Login },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'register', component: Register },
     { path: 'email-verification', component: EmailVerification },
     { path: 'password-reset', component: PasswordReset },
+    { path: 'loader', component: Loader},
     { path: '', component: Landing}
 ];
