@@ -2,6 +2,7 @@ package calling.services;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -61,4 +62,10 @@ public class CallService {
     public List<CallEntity> listarTodosChamados() {
     	return callRepository.findAll();
     }
+    
+    public Optional<CallEntity> detalharChamado(Long id) {
+    	return callRepository.findById(id);
+    }
+    
+    
 }

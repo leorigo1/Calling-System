@@ -23,4 +23,11 @@ export class ChamadoService {
         `${this.apiUrl}/call/list-all`
         );
     }
+
+    detalhar(id: number): Observable<any> {
+        return this.http.get<any>(
+        `${this.apiUrl}/call/detail-call/${id}`
+        );
+    }
+
 }

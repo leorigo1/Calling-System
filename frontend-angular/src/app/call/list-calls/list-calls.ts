@@ -21,8 +21,8 @@ chamados$: Observable<any[]>;
     this.chamados$ = this.service.listar();
   }
 
-detalhar() {
-  this.router.navigate(['/listar-chamados/chamado'])
-}
+  detalhar(id: number) {
+    this.router.navigate(['listar-chamados/', id]);
+  }
 
 }

@@ -31,10 +31,7 @@
     <div class="select-camp">
     <label for="select-tecn">Responsável</label>
     <select name="select-tecn" id="select-tecn" [(ngModel)]="responsavel">
-        <option value="Leonardo Rigo">Leonardo Rigo</option>
-        <option value="Gabriel Penhasco">Gabriel Penhasco</option>
-        <option value="Felipe Montano">Felipe Montano</option>
-        <option value="Onça rosa">Onça rosa</option>
+      <option *ngFor="let usuario of usuarios$ | async" [ngValue]="usuario"> {{ usuario.name }} </option>
     </select>
     </div>
   </div>

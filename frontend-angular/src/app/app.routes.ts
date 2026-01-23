@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: 'login', component: Login },
     { path: 'iniciar-chamado', component: CreateCall },
     { path: 'listar-chamados', component: ListCalls },
-    { path: 'listar-chamados/chamado', component: CallDetails},  //alterar para :id quando usar o backend
+    { path: 'listar-chamados/:id', component: CallDetails}, 
     { path: 'register', component: Register },
     { path: 'email-verification', component: EmailVerification },
     { path: 'password-reset', component: PasswordReset },

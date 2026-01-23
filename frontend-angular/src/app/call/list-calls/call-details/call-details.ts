@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { DatePipe, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../../services/UserService';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-call-details',
   standalone: true,
-  imports: [DatePipe, FormsModule],
+  imports: [DatePipe, FormsModule, CommonModule],
   templateUrl: './call-details.html',
   styleUrl: './call-details.scss',
 })
@@ -16,7 +19,12 @@ data = '18/09/2006 13:30';
 novaMensagem = '';
 responsavel = '';
 
-constructor (private router: Router) {}
+usuarios$: Observable<any[]>;
+
+constructor (private router: Router, private usuarios: UserService) {
+ this.usuarios$ = this.usuarios.listUsers();
+}
+
 
   sair() {
     this.router.navigate(['/listar-chamados'])

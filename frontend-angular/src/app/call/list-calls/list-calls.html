@@ -2,7 +2,7 @@
 
 <h1>Listar Chamados</h1>
 
-<div class="chamado-card" *ngFor="let chamado of chamados$ | async">
+<div class="chamado-card" (click)="detalhar(chamado.id)" *ngFor="let chamado of chamados$ | async">
   <p class="id">#{{ chamado.id }}</p>
   <p class="titulo">{{ chamado.titulo }}</p>
   <p class="descricao">{{ chamado.descricao }}</p>
@@ -18,21 +18,5 @@
   </div>
 </div>
 
-
-<div class="chamado-card" (click)="detalhar()">
-  <p class="id">1</p>
-  <p class="titulo">Problema no radiador</p>
-  <p class="descricao">Radiador está sem líquido</p>
-
-  <div class="info">
-    <span class="categoria">Pacote Office</span>
-    <span class="prioridade">ALTA</span>
-  </div>
-
-  <div class="rodape">
-    <span class="data">18/09/2006 13:30</span>
-    <span class="usuario">Leonardo Rigo</span>
-  </div>
-</div>
 
 </body>
