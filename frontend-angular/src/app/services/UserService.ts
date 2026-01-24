@@ -33,4 +33,8 @@ export class UserService {
         return this.http.post(this.apiUrl + '/auth/redefinir-senha', password)
     }
 
+    verificarEmail(email: string): Observable<boolean> {
+        return this.http.get<boolean>(`${this.apiUrl}/user/email-existe?email=${email}`)
+    }
+
 }

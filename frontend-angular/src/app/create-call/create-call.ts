@@ -20,6 +20,7 @@ export class CreateCall implements OnInit{
   callingPriority = 1;
   categoria = '';
   formadeContato = '';
+PacoteOffice = '';
 
    usuarios: Usuario[] = [];
    usuarioSelecionadoId!: number;

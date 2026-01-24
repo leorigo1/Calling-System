@@ -16,7 +16,6 @@ public class UserService {
         this.userRepository = userRepository;
     }
 	
-	
 	public UserEntity createUser (UserEntity userEntity) {
 		return userRepository.save(userEntity);
 	}
@@ -32,6 +31,10 @@ public class UserService {
 	
 	public List<UserEntity> listarTodosUsuarios () {
 		return userRepository.findAll();
+	}
+	
+	public boolean emailExiste(String email) {
+		return userRepository.existsByEmail(email);
 	}
 	
 }

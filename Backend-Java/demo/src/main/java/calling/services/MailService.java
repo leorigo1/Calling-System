@@ -1,6 +1,7 @@
 package calling.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,5 @@ public class MailService {
 		message.setText("voce é um delicia cara");
 		javaMailSender.send(message);
 	}
-		
+	
 }
