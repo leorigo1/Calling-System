@@ -17,6 +17,7 @@ public class UserEntity {
 	
 	@Column(unique = true, nullable = false)
 	private String name;
+	
 	private String email;
 	private String password;
 	

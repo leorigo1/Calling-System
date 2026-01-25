@@ -15,7 +15,7 @@
 <div class="categoria">
 <label for="categoria">Categoria</label>
 <select [(ngModel)]="categoria">
-  <option [value]="PacoteOffice">Pacote Office</option>
+  <option [value]="1">Pacote Office</option>
   <option [value]="2">Windows</option>
   <option [value]="3">Equipamento</option>
   <option [value]="4">Internet</option>
@@ -25,11 +25,13 @@
 
 <div class="prioridade">
   <label for="callingPriority">Prioridade</label>
-<select [(ngModel)]="callingPriority">
-  <option [value]="1">Baixa</option>
-  <option [value]="2">Média</option>
-  <option [value]="3">Alta</option>
-</select>
+
+  <select [(ngModel)]="callingPriority">
+    <option [ngValue]="null">Selecione</option>
+    <option value="BAIXA">Baixa</option>
+    <option value="MEDIA">Média</option>
+    <option value="ALTA">Alta</option>
+  </select>
 </div>
 
 <div class="contato">

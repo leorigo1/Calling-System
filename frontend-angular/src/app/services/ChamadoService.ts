@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
+import { Chamado } from "../models/Chamado";
 
 @Injectable ({
     providedIn: 'root'
@@ -24,10 +25,9 @@ export class ChamadoService {
         );
     }
 
-    detalhar(id: number): Observable<any> {
-        return this.http.get<any>(
+    detalhar(id: number) {
+        return this.http.get<Chamado>(
         `${this.apiUrl}/call/detail-call/${id}`
         );
     }
-
 }

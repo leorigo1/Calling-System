@@ -15,23 +15,26 @@ export class EmailVerification {
 
   email = '';
 
-  constructor (private router: Router, private userService: UserService, private passwordService: PasswordService, private loader: LoaderService) {}
+  constructor (private router: Router, 
+               private userService: UserService,
+               private passwordService: PasswordService, 
+               private loader: LoaderService) {}
 
   validar(email: string) {
     this.userService.verificarEmail(email).subscribe(existe => {
-  if (existe) {
-    this.loader.show();
+    if (existe) {
+      this.loader.show();
 
-    setTimeout(() => {
-    this.router.navigate(['/password-reset']).then(() => {
-        this.loader.hide();
-      });
-    }, 1000);
+      setTimeout(() => {
+      this.router.navigate(['/password-reset']).then(() => {
+          this.loader.hide();
+        });
+      }, 1000);
 
-  } else {
-    alert("Email não encontrado!")
-  }
-});
+    } else {
+      alert("Email não encontrado!")
+    }
+    });
   }
 
 }

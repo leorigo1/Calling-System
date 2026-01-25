@@ -4,6 +4,7 @@ import { UserService } from '../services/UserService';
 import { Usuario } from '../models/Usuario';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-call',
@@ -17,15 +18,18 @@ export class CreateCall implements OnInit{
   usuario = '';
   titulo = '';
   descricao = '';
-  callingPriority = 1;
+  callingPriority: string | null = null;
   categoria = '';
   formadeContato = '';
-PacoteOffice = '';
 
    usuarios: Usuario[] = [];
    usuarioSelecionadoId!: number;
 
-  constructor(private chamadoService: ChamadoService, private userService: UserService) {}
+  constructor(private chamadoService: ChamadoService, private userService: UserService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.listarUsuarios();
+  }
 
   salvarChamado() {
     const body = {
@@ -37,9 +41,11 @@ PacoteOffice = '';
       formadeContato: this.formadeContato
     };
 
-
     this.chamadoService.criarChamado(body).subscribe({
-      next: () => alert('Chamado criado com sucesso'),
+      next: (res) => {
+        alert('Chamado criado com sucesso'),
+        this.router.navigate([`/listar-chamados/${res.id}`])
+      },
       error: err => console.error(err)
     });
   }
@@ -53,9 +59,4 @@ PacoteOffice = '';
       error: (err) => console.error('Erro ao buscar usuários', err)
     });
   }
-
-  ngOnInit(): void {
-    this.listarUsuarios();
-  }
-
 }

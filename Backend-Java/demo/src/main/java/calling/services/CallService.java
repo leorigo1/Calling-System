@@ -66,6 +66,4 @@ public class CallService {
     public Optional<CallEntity> detalharChamado(Long id) {
     	return callRepository.findById(id);
     }
-    
-    
 }

@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DatePipe, NgClass } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../../services/UserService';
 import { Observable } from 'rxjs';
+import { ChamadoService } from '../../../services/ChamadoService';
+import { ActivatedRoute } from '@angular/router';
+import { Chamado } from '../../../models/Chamado';
+
 
 @Component({
   selector: 'app-call-details',
@@ -13,18 +17,20 @@ import { Observable } from 'rxjs';
   templateUrl: './call-details.html',
   styleUrl: './call-details.scss',
 })
-export class CallDetails {
+export class CallDetails implements OnInit{
 
-data = '18/09/2006 13:30';
 novaMensagem = '';
 responsavel = '';
 
-usuarios$: Observable<any[]>;
+usuarios$!: Observable<any[]>;
+chamado$!: Observable<Chamado>;
 
-constructor (private router: Router, private usuarios: UserService) {
- this.usuarios$ = this.usuarios.listUsers();
-}
-
+  constructor(
+    private router: Router,
+    private usuarios: UserService,
+    private chamadoService: ChamadoService,
+    private route: ActivatedRoute
+  ) {}
 
   sair() {
     this.router.navigate(['/listar-chamados'])
@@ -54,4 +60,13 @@ constructor (private router: Router, private usuarios: UserService) {
     }
     console.log('chamado finalizado', this.responsavel)
   }
+
+  ngOnInit(): void {
+    const idChamado = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.usuarios$ = this.usuarios.listUsers();
+    this.chamado$ = this.chamadoService.detalhar(idChamado);
+  }
+
+
 }

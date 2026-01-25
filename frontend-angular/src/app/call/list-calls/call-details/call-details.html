@@ -1,23 +1,24 @@
 <body>
 
-<h1>Chamado CH-3130</h1>
+<h1>Chamado #{{(chamado$| async)?.id }}</h1>
 
 <div class="chamado-card">
   <p class="id">1</p>
-  <p class="titulo">Problema no radiador</p>
-  <p class="descricao">Radiador está sem líquido</p>
+  <p class="titulo">{{(chamado$| async)?.titulo }}</p>
+  <p class="descricao">{{(chamado$| async)?.descricao }}</p>
 
   <div class="info">
-    <span class="categoria">Pacote Office</span>
-    <span class="prioridade">ALTA</span>
+    <span class="categoria">{{(chamado$| async)?.categoria }}</span>
+    <span class="prioridade">{{(chamado$| async)?.callingPriority }}</span>
   </div>
 
   <div class="rodape">
-    <span class="data"> {{data}} </span>          <!-- date: 'dd/MM/yyyy' -->
-    <span class="usuario">Leonardo Rigo</span>
+    <span class="data"> {{ (chamado$ | async)?.dataCriacao | date: 'dd/MM/yyyy HH:mm'}}</span>
+    <span class="usuario">{{(chamado$| async)?.usuario?.name }}</span>
   </div>
 
   <div class="desc-area">
+
 <textarea
   [(ngModel)]="novaMensagem"
   placeholder="Descreva o ocorrido..."
